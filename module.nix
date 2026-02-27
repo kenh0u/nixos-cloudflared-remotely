@@ -23,7 +23,7 @@ in
   config = mkIf cfg.enable {
     environment.systemPackages = [ pkgs.cloudflared ];
 
-    systemd.services.cloudflared = {
+    systemd.services.cloudflared-remotely = {
       description = "Cloudflare Tunnel (Remotely Managed)";
       after = [ "network-online.target" ];
       wants = [ "network-online.target" ];
